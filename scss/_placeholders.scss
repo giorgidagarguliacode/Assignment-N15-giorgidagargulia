@@ -1,0 +1,25 @@
+@use "variables";
+@use "mixin";
+%boxes{
+      width: 500px;
+    height: variables.$xl-h;
+    background-color: variables.$background-color;
+    margin-bottom: 100px;
+    padding-top: 80px;
+    border-radius: variables.$m-borderradius;
+    %header{
+       font-size: variables.$l-fontsize;
+  text-align: variables.$text-align;
+      margin-bottom: 50px;
+  color: variables.$secondary-color;
+}
+}
+%boxesinfo{
+  @include mixin.flex(row,wrap,center,none);
+  %paragraph{
+      font-size: variables.$l-fontsize;
+      width: 400px;
+      color: variables.$secondary-color;
+      
+  }
+}
