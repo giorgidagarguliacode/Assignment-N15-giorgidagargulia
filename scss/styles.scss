@@ -2,51 +2,165 @@
 @use "variables";
 @use "placeholders";
 @use "mixin";
-
-.container-fluid{
-    background-color: variables.$background-color;
-    height: variables.$l-h;
-        @include mixin.flex;
-        gap: variables.$s-gap;
-       
-    h1{
-        color: variables.$secondary-color;
-        font-size: variables.$xl-fontsize;
-    }
-    i {
-        font-size: variables.$xl-fontsize;
-    }
-    div{
-        width: 100%;
-       padding-right: 0;
-       padding-left: 0;
-         button{
-          transform: translate(0,18px);
-           border-radius: 0; 
-          
-        }
-        button:hover{
-            background-color: variables.$background-color;
-            border: 1px solid variables.$background-color;
-        }
-        }
+body{
+  overflow-x: hidden;
+  
 }
-.hover-image{
-    border: 5px solid variables.$background-color;
+header {
+  background-color: variables.$background-color;
+  height: variables.$l-h;
+  @include mixin.flex;
+  gap: variables.$s-gap;
+ 
+ h1 {
+  color: variables.$secondary-color;
+  font-size: variables.$xl-fontsize;
+  transform: translate(0,20px);
+ }
+
+i {
+  font-size: variables.$xl-fontsize;
+  transform: translate(0,20px);
+}
+  div {
+      width: 100%;
+      
+      button {
+        transform: translate(0, 18px);
+        border-radius: 0 !important;
+      }
+      button:hover {
+        background-color: variables.$background-color;
+        border: 1px solid variables.$background-color;
+      }
+    }
+  }
+
+  .sec1 {
+    .carousel-inner {
+      height: 800px;
+      margin-bottom: 100px;
+    }
+  }
+  .sec2{
+   margin-bottom: 100px;
+    .headerdiv{
+      @include mixin.flex;
+      margin-bottom: 100px;
+     h2{
+      color: variables.$primary-color;
+     }
+     i{
+    
+      font-size: variables.$xl-fontsize;
+     }
+   }
+  }
+  .container{
+@include mixin.flex(row,wrap,space-around,none);
+gap: variables.$m-gap;
+  
+  .box1{
+  @extend %boxes;
+    h2{
+     @extend  %header;
+     }
+  
+    .box-info1{
+    @extend %boxesinfo;
+   p{
+    @extend  %paragraph;
+   }
+  }
+   }
+   .box2{
+  @extend %boxes;
+    h2{
+     @extend  %header;
+     }
+  
+    .box-info2{
+    @extend %boxesinfo;
+   p{
+    @extend  %paragraph;
+   }
+  }
+   }
+   .box3{
+  @extend %boxes;
+    h2{
+     @extend  %header;
+     }
+  
+    .box-info3{
+    @extend %boxesinfo;
+   p{
+    @extend  %paragraph;
+   }
+  }
+   }
+  }
+
+footer{
+  background-color: variables.$background-color;
+  height: 500px;
+  @include mixin.flex(column,wrap,none,none);
+   .footerdiv1{
+    @include mixin.flex(row,wrap,none,none);
+    gap: variables.$s-gap;
+    padding: 50px 150px 0 200px;
+    
+    h3{
+   font-size: variables.$xl-fontsize;
+      color: variables.$secondary-color;
+    }
+    i{
+      font-size: variables.$xl-fontsize;
+      transform: translate(0,10px);
+    }
+   }
+   .footerdiv2{
+    @include mixin.flex(column,wrap,none,none);
+    gap: variables.$m-gap;
+     color: variables.$secondary-color;
+    padding: 50px 0 0 200px;
+    font-size: variables.$l-fontsize;
+   
+    }
+   .footerdiv3{
+    @include mixin.flex(column,wrap,none,none);
+    color: variables.$secondary-color;
     position: relative;
-    img{
-        position: absolute;
-       width: 100%;
-       height: 700px;
-       z-index: 1;
+   top: 70px;
+   right: 300px;
+    h1{
+      display: inline-block;
+      margin-right: 15px;
+   }
+   i{
+       font-size:30px;
+       display: inline-block;
        
+   }
+   p{
+    font-size: variables.$l-fontsize;
+    margin-bottom: 60px;
+    span{
+        font-size: variables.$l-fontsize;
     }
-    .hover-image:hover{
-         position: absolute;
-         width: 100%;
-       height: 700px;
-     z-index: 2;
-
+   }
+   }
+   .footerdiv4{
+     @include mixin.flex(column,wrap,none,none);
+    color: variables.$secondary-color;
+    position: relative;
+    bottom: 330px;
+    margin-left: 200px;
+   
+    .socialmedia-icons{
+       @include mixin.flex(row,wrap,none,none);
+       gap: variables.$m-gap;
+      font-size: variables.$l-fontsize;
     }
-}
-
+   }
+  }
